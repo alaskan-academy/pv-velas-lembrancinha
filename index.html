@@ -777,6 +777,15 @@
     }
     .offer-includes li::before { content: "✓"; color: var(--handify-green); font-weight: 700; flex-shrink: 0; font-size: 1rem; }
 
+    .offer-img {
+      display: block;
+      width: 100%;
+      max-width: 380px;
+      border-radius: 10px;
+      margin: 16px auto 24px;
+    }
+    @media (max-width: 600px) { .offer-img { max-width: 100%; } }
+
     .offer-price-from { font-size: 0.85rem; color: #aaa; text-decoration: line-through; margin-bottom: 16px; }
     .offer-price-installment-label { font-size: 0.8rem; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
     .offer-price {
