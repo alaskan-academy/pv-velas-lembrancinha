@@ -1652,31 +1652,6 @@
   </div>
 </footer>
 
-<!-- CAROUSEL SCRIPT -->
-<script>
-  (function () {
-    var track = document.getElementById('carouselTrack');
-    var slides = track.querySelectorAll('.carousel-slide');
-    var current = 0;
-    var perView = window.innerWidth <= 640 ? 1 : window.innerWidth <= 900 ? 2 : 3;
-    var max = slides.length - perView;
-
-    window.slideCarousel = function (dir) {
-      current = Math.max(0, Math.min(current + dir, max));
-      var slideWidth = slides[0].offsetWidth + 12;
-      track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
-    };
-
-    window.addEventListener('resize', function () {
-      perView = window.innerWidth <= 640 ? 1 : window.innerWidth <= 900 ? 2 : 3;
-      max = slides.length - perView;
-      current = Math.min(current, max);
-      var slideWidth = slides[0].offsetWidth + 12;
-      track.style.transform = 'translateX(-' + (current * slideWidth) + 'px)';
-    });
-  })();
-</script>
-
 <!-- COUNTDOWN SCRIPT -->
 <script>
   (function () {
