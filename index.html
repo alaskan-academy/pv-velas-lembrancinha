@@ -567,61 +567,37 @@
       margin-bottom: 8px;
     }
 
-    /* ── CARROSSEL ── */
-    .carousel-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    /* ── CARROSSEL INFINITO ── */
+    .carousel-auto-outer {
+      overflow: hidden;
+      width: 100%;
       margin-top: 32px;
     }
-    .carousel-track-outer {
-      overflow: hidden;
-      flex: 1;
-      border-radius: 12px;
-    }
-    .carousel-track {
+    .carousel-auto-track {
       display: flex;
       gap: 12px;
-      transition: transform 0.35s ease;
+      width: max-content;
+      animation: carousel-scroll 28s linear infinite;
     }
-    .carousel-slide {
-      flex: 0 0 calc(33.333% - 8px);
+    .carousel-auto-track:hover { animation-play-state: paused; }
+    .carousel-auto-slide {
+      flex: 0 0 260px;
+      height: 260px;
     }
-    @media (max-width: 640px) { .carousel-slide { flex: 0 0 calc(100% - 0px); } }
-    @media (max-width: 900px) and (min-width: 641px) { .carousel-slide { flex: 0 0 calc(50% - 6px); } }
-
-    .carousel-img-placeholder {
-      aspect-ratio: 1/1;
-      background: #fff;
-      border: 1.5px dashed rgba(0,0,0,0.12);
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #bbb;
-      font-size: 0.8rem;
+    @media (max-width: 640px) {
+      .carousel-auto-slide { flex: 0 0 180px; height: 180px; }
     }
-    .carousel-img-placeholder img {
+    .carousel-auto-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
+      display: block;
     }
-    .carousel-btn {
-      flex-shrink: 0;
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(0,0,0,0.12);
-      background: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--handify-gray-dark);
-      transition: background 0.2s, border-color 0.2s;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    @keyframes carousel-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .carousel-btn:hover { background: var(--handify-blue); color: #fff; border-color: var(--handify-blue); }
 
     /* ── NÚMEROS DE CREDIBILIDADE ── */
     .credibility-stats {
